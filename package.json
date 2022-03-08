@@ -1,0 +1,43 @@
+{
+  "name": "microservices",
+  "version": "1.0.0",
+  "description": "microservice application",
+  "main": "index.js",
+  "scripts": {
+    "install:client":"cd client && npm i",
+    "install:comments":"cd comments && npm i",
+    "install:event-bus":"cd event-bus && npm i",
+    "install:moderation":"cd moderation && npm i",
+    "install:posts":"cd posts && npm i",
+    "install:query":"cd query && npm i",
+    "install-all":"run-p install:*",
+    "ci:this":"npm ci",
+    "ci:client":"cd client && npm ci",
+    "ci:comments":"cd comments && npm ci",
+    "ci:event-bus":"cd event-bus && npm ci",
+    "ci:moderation":"cd moderation && npm ci",
+    "ci:posts":"cd posts && npm ci",
+    "ci:query":"cd query && npm ci",
+    "ci-all":"run-p ci:*",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jstafford74/microservices.git"
+  },
+  "keywords": [
+    "microservices",
+    "docker",
+    "experss",
+    "react"
+  ],
+  "author": "Jeremiah Stafford",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jstafford74/microservices/issues"
+  },
+  "homepage": "https://github.com/jstafford74/microservices#readme",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
