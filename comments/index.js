@@ -20,7 +20,7 @@ app.post('/posts/:id/comments', async (req, res) => {
 
   const comments = commentsByPostId[req.params.id] || [];
 
-  comments.push({ id: commentId, content });
+  comments.push({ id: commentId, content, status: 'pending' });
 
   commentsByPostId[req.params.id] = comments;
 
@@ -33,6 +33,11 @@ app.post('/posts/:id/comments', async (req, res) => {
     },
   });
   res.status(201).send(comments);
+});
+
+app.post('/events', (req, res) => {
+  console.log('Comment Event', req.body.type);
+  res.send({});
 });
 
 app.listen(4001, () => {
